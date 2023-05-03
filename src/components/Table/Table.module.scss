@@ -1,0 +1,98 @@
+@import './src/theme/shared';
+@import './src/theme/pallete';
+@import './src/theme/functions';
+@import './src/theme/typography';
+@import './src/theme/grid';
+
+.table {
+  width: 100%;
+  @include text-14;
+  border-spacing: 0;
+}
+
+.tableColumn {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.tableHeader {
+  border-bottom: 1px solid $border;
+
+  .tableColumn {
+    padding: 10px 15px;
+  }
+}
+
+.tableHeaderText {
+  float: left;
+  color: $light_grey;
+  font-weight: 400;
+  text-transform: capitalize;
+  @include text-12;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px;
+
+  svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+.tableEmpty {
+  color: $color_grey;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.tableRow {
+  border-bottom: 1px solid $border;
+  visibility: visible;
+
+  .showOnHover {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .showOnHover {
+      visibility: visible;
+    }
+  }
+}
+
+.tableRowClickable {
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($color_grey, 0.1);
+  }
+}
+
+.textRow {
+  height: 100%;
+  overflow-wrap: anywhere;
+  padding-right: 10px;
+
+  small {
+    line-height: 15px;
+  }
+
+  ol {
+    flex-wrap: wrap;
+  }
+}
+
+.cols {
+  display: flex;
+}
+
+@for $i from 0 to 100 {
+  .col-#{$i} {
+    flex: $i 1 0;
+  }
+}
